@@ -106,6 +106,7 @@ const Playground = () => {
   //   console.log("board: ", board);
   const handleTick = (idr, idcell, restarted = false) => {
     if (restarted) {
+      setEnd(false);
       socket.emit("moves", {
         board: [
           [0, 0, 0],
