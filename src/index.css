@@ -1,0 +1,22 @@
+@import "keep-react/css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 100px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #fad459; */
+  background-image: linear-gradient(#fad459, rgb(255, 255, 255));
+  border-radius: 5px;
+}
