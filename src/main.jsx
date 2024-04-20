@@ -11,14 +11,23 @@ import {
 } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
+const { innerWidth: width, innerHeight: height } = window;
+console.log(width, height);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <div className="w-screen flex justify-center items-center bg-[#fad459]">
-    <div className="h-screen aspect-[1080/1920] bg-white">
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={routes} />
-      </QueryClientProvider>
+  <React.StrictMode>
+    <div
+      className="flex justify-center items-center bg-[#fad459]"
+      style={{ width, height, overflow: "hidden" }}
+    >
+      <div
+        className={`h-full ${
+          width / height > 3 / 4 ? "aspect-[1080/1920]" : "w-full"
+        } bg-white`}
+      >
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={routes} />
+        </QueryClientProvider>
+      </div>
     </div>
-  </div>
-  // </React.StrictMode>
+  </React.StrictMode>
 );
