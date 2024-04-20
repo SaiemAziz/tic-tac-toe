@@ -138,7 +138,11 @@ const Row = ({ u, open, setOpen }) => {
         style={{
           backgroundColor: open === u?.opponent?.email ? "#fad459" : "#fee8ed",
         }}
-        onClick={() => setOpen((prev) => (prev ? null : u?.opponent?.email))}
+        onClick={() =>
+          setOpen((prev) =>
+            prev === u?.opponent?.email ? null : u?.opponent?.email
+          )
+        }
       >
         <img
           className="h-7 aspect-square object-cover object-center rounded-full "
